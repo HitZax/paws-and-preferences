@@ -1,0 +1,174 @@
+body {
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  max-width: 400px;
+  margin: 32px auto 0 auto;
+  padding: 24px 16px 32px 16px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(60,60,120,0.10);
+  text-align: center;
+  font-family: 'Quicksand', 'Segoe UI', Arial, sans-serif;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive, sans-serif;
+  font-size: 2.2rem;
+  color: #6d28d9;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+h2 {
+  color: #4f46e5;
+  margin-bottom: 18px;
+}
+
+.card {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  margin: 0 auto 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(60,60,120,0.18);
+  background: linear-gradient(120deg, #f1f5f9 60%, #e0e7ff 100%);
+  transition: box-shadow 0.2s;
+  touch-action: pan-y;
+  will-change: transform;
+  animation: fadeInCard 0.5s;
+}
+
+.card.dragging {
+  box-shadow: 0 16px 48px rgba(109,40,217,0.18);
+  cursor: grabbing;
+}
+
+.catImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(109,40,217,0.08);
+  background: #e0e7ff;
+  transition: filter 0.2s;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 0 12px 0;
+  gap: 16px;
+}
+
+.like, .dislike {
+  flex: 1 1 0;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 14px 0;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(109,40,217,0.07);
+  transition: background 0.2s, transform 0.1s;
+  cursor: pointer;
+  margin: 0 8px;
+}
+
+.like {
+  background: linear-gradient(90deg, #4ade80 60%, #22d3ee 100%);
+  color: #fff;
+}
+
+.like:hover, .like:focus {
+  background: linear-gradient(90deg, #22d3ee 60%, #4ade80 100%);
+  transform: scale(1.05);
+}
+
+.dislike {
+  background: linear-gradient(90deg, #f87171 60%, #fbbf24 100%);
+  color: #fff;
+}
+
+.dislike:hover, .dislike:focus {
+  background: linear-gradient(90deg, #fbbf24 60%, #f87171 100%);
+  transform: scale(1.05);
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 18px 0 24px 0;
+}
+
+.catThumb {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(109,40,217,0.10);
+  border: 2px solid #a5b4fc;
+  background: #f1f5f9;
+}
+
+button {
+  outline: none;
+}
+
+.swipe-indicator {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 28px;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 2px 12px rgba(109,40,217,0.10);
+  pointer-events: none;
+  z-index: 2;
+  letter-spacing: 1px;
+  transition: opacity 0.15s;
+  user-select: none;
+}
+
+.like-indicator {
+  color: #22c55e;
+  border: 2px solid #22c55e;
+}
+
+.dislike-indicator {
+  color: #ef4444;
+  border: 2px solid #ef4444;
+}
+
+@keyframes fadeInCard {
+  from { opacity: 0; transform: scale(0.96);}
+  to   { opacity: 1; transform: scale(1);}
+}
+
+@media (max-width: 500px) {
+  .container {
+    max-width: 98vw;
+    padding: 8vw 2vw 12vw 2vw;
+    border-radius: 0;
+    margin: 0;
+  }
+  .card {
+    width: 92vw;
+    height: 92vw;
+    max-width: 98vw;
+    max-height: 98vw;
+    min-width: 220px;
+    min-height: 220px;
+  }
+}
