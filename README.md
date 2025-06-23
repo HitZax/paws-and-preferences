@@ -1,5 +1,9 @@
-// filepath: c:\Users\user\Documents\Coding-Projects\paws-and-preferences\README.md
 # Paws & Preferences 🐱
+
+**Deliverables**
+
+1. **Hosted Website:** [https://hitzax.github.io/paws-and-preferences](https://hitzax.github.io/paws-and-preferences)
+2. **Public GitHub Repository:** [https://github.com/HitZax/paws-and-preferences](https://github.com/HitZax/paws-and-preferences)
 
 Find Your Favorite Kitty with this fun, swipe-based cat preference discovery app!
 
